@@ -1,9 +1,9 @@
 # Twitter Response Codes (to JSON)
-Parses the information available in the [official documentation]() into JSON so that it can be used in code.
+Parses the information available in the [official documentation](https://developer.twitter.com/en/docs/basics/response-codes) into JSON so that it can be used in code.
 
 Files generated upon last execution:
-* [http codes](codes_0.json)
-* [response codes](codes_1.json)
+* [http status codes](codes_0.json)
+* [error codes](codes_1.json)
 
 ### Re-run code
 * create virtual environment: `python -m venv env`
