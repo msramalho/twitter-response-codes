@@ -8,14 +8,12 @@ tree = etree.HTML(res.content.decode("utf-8"))
 
 i = 0
 for t in tree.xpath('//*[@id="component-wrapper"]//table'):
-    codes = []
+    codes = {}
     for row in t.xpath(".//tr")[1:]:
         tds = row.xpath("./td")
         if len(tds) == 3:
-            codes.append({
-                "code": int(tds[0].text),
-                "text": tds[1].text,
-                "description": tds[2].text})
+            codes[int(tds[0].text)] = {"text": tds[1].text, "description": tds[2].text}
+
     with open("codes_%d.json" % i, "w", encoding="utf-8") as out:
         out.write(json.dumps(codes, ensure_ascii=False))
     i+=1
